@@ -179,3 +179,8 @@ print(cov)
 for i, tensor in enumerate(cov):
     # tf.print(tensor, output_stream=sys.stderr)
     print(i, tensor[0].shape)
+
+
+
+kfac_optimizer = kfac.PeriodicInvCovUpdateKfacOpt(learning_rate=0.005, damping=0.001, layer_collection=layer_collection)
+kfac_train_op = kfac_optimizer.minimize(loss)
